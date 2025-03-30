@@ -1,9 +1,10 @@
 {
-	"extends": "expo/tsconfig.base",
+	"extends": [
+		"expo/tsconfig.base",
+		"@total-typescript/tsconfig/bundler/no-dom/app"
+	],
 	"compilerOptions": {
-		"strict": true,
 		"jsx": "react-jsx",
-
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["./src/*"]

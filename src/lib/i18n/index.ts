@@ -15,7 +15,7 @@ const systemLocales = Localization.getLocales();
 
 function pickSupportedLocale() {
   return systemLocales.find((locale) => {
-    const primaryTag = locale.languageTag.split("-")[0];
+    const primaryTag = locale.languageTag.split("-")[0] ?? "en";
     return Object.keys(resources).includes(primaryTag);
   });
 }

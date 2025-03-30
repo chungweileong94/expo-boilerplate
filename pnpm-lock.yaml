@@ -43,7 +43,7 @@ importers:
         version: 14.1.0-canary-20250320-7a205d3(expo@53.0.0-canary-20250320-7a205d3(@babel/core@7.26.10)(@expo/metro-runtime@5.0.0-canary-20250320-7a205d3(react-native@0.79.0-rc.0(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.0)(react@19.0.0)))(babel-plugin-react-compiler@19.0.0-beta-aeaed83-20250323)(react-compiler-runtime@19.0.0-beta-aeaed83-20250323(react@19.0.0))(react-native@0.79.0-rc.0(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.0)(react@19.0.0))(react@19.0.0))(react-native@0.79.0-rc.0(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.0)(react@19.0.0))
       i18next:
         specifier: ^24.2.3
-        version: 24.2.3(typescript@5.3.3)
+        version: 24.2.3(typescript@5.8.2)
       intl-pluralrules:
         specifier: ^2.0.1
         version: 2.0.1
@@ -58,7 +58,7 @@ importers:
         version: 19.0.0(react@19.0.0)
       react-i18next:
         specifier: ^15.4.1
-        version: 15.4.1(i18next@24.2.3(typescript@5.3.3))(react-dom@19.0.0(react@19.0.0))(react-native@0.79.0-rc.0(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.0)(react@19.0.0))(react@19.0.0)
+        version: 15.4.1(i18next@24.2.3(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react-native@0.79.0-rc.0(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.0)(react@19.0.0))(react@19.0.0)
       react-native:
         specifier: 0.79.0-rc.0
         version: 0.79.0-rc.0(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.0)(react@19.0.0)
@@ -84,12 +84,15 @@ importers:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
+      '@total-typescript/tsconfig':
+        specifier: ^1.0.4
+        version: 1.0.4
       '@types/react':
         specifier: 19.0.0
         version: 19.0.0
       typescript:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.8.2
+        version: 5.8.2
 
 packages:
 
@@ -1135,6 +1138,9 @@ packages:
 
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
+
+  '@total-typescript/tsconfig@1.0.4':
+    resolution: {integrity: sha512-fO4ctMPGz1kOFOQ4RCPBRBfMy3gDn+pegUfrGyUFRMv/Rd0ZM3/SHH3hFCYG4u6bPLG8OlmOGcBLDexvyr3A5w==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -3168,8 +3174,8 @@ packages:
     resolution: {integrity: sha512-Ne2YiiGN8bmrmJJEuTWTLJR32nh/JdL1+PSicowtNb0WFpn59GK8/lfD61bVtzguz7b3PBt74nxpv/Pw5po5Rg==}
     engines: {node: '>=8'}
 
-  typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4895,6 +4901,8 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
+  '@total-typescript/tsconfig@1.0.4': {}
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.27.0
@@ -5796,11 +5804,11 @@ snapshots:
 
   hyphenate-style-name@1.1.0: {}
 
-  i18next@24.2.3(typescript@5.3.3):
+  i18next@24.2.3(typescript@5.8.2):
     dependencies:
       '@babel/runtime': 7.27.0
     optionalDependencies:
-      typescript: 5.3.3
+      typescript: 5.8.2
 
   ieee754@1.2.1: {}
 
@@ -6608,11 +6616,11 @@ snapshots:
       react-fast-compare: 3.2.2
       shallowequal: 1.1.0
 
-  react-i18next@15.4.1(i18next@24.2.3(typescript@5.3.3))(react-dom@19.0.0(react@19.0.0))(react-native@0.79.0-rc.0(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.0)(react@19.0.0))(react@19.0.0):
+  react-i18next@15.4.1(i18next@24.2.3(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react-native@0.79.0-rc.0(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.0)(react@19.0.0))(react@19.0.0):
     dependencies:
       '@babel/runtime': 7.27.0
       html-parse-stringify: 3.0.1
-      i18next: 24.2.3(typescript@5.3.3)
+      i18next: 24.2.3(typescript@5.8.2)
       react: 19.0.0
     optionalDependencies:
       react-dom: 19.0.0(react@19.0.0)
@@ -7093,7 +7101,7 @@ snapshots:
 
   type-fest@0.7.1: {}
 
-  typescript@5.3.3: {}
+  typescript@5.8.2: {}
 
   ua-parser-js@1.0.40: {}
 
