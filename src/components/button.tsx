@@ -2,8 +2,8 @@ import {
   Pressable,
   type PressableProps,
   type StyleProp,
-  StyleSheet,
   Text,
+  type TextStyle,
   type View,
   type ViewStyle,
 } from "react-native";
@@ -42,14 +42,14 @@ export function Button({ ref, title, ...props }: ButtonProps) {
         scale.value = 1;
         props.onPressOut?.(e);
       }}
-      style={[styles.button, props.style, animatedStyle]}
+      style={[$styles.button, props.style, animatedStyle]}
     >
-      <Text style={styles.buttonText}>{title}</Text>
+      <Text style={$styles.buttonText}>{title}</Text>
     </AnimatedPressable>
   );
 }
 
-const styles = StyleSheet.create({
+const $styles = {
   button: {
     alignItems: "center",
     backgroundColor: "#6366F1",
@@ -65,11 +65,11 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-  },
+  } satisfies ViewStyle,
   buttonText: {
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
-  },
-});
+  } satisfies TextStyle,
+};
