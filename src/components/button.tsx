@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import {
   Pressable,
   PressableProps,
@@ -13,11 +12,12 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-na
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 type ButtonProps = {
+  ref?: React.Ref<View>;
   title?: string;
   style?: StyleProp<ViewStyle>;
 } & PressableProps;
 
-export const Button = forwardRef<View, ButtonProps>(({ title, ...props }, ref) => {
+export function Button({ ref, title, ...props }: ButtonProps) {
   const scale = useSharedValue(1);
 
   const animatedStyle = useAnimatedStyle(() => {
@@ -40,7 +40,7 @@ export const Button = forwardRef<View, ButtonProps>(({ title, ...props }, ref) =
       <Text style={styles.buttonText}>{title}</Text>
     </AnimatedPressable>
   );
-});
+}
 
 const styles = StyleSheet.create({
   button: {

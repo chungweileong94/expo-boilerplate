@@ -8,7 +8,7 @@ type ScreenContentProps = {
   children?: React.ReactNode;
 };
 
-export const ScreenContent = ({ title, path, children }: ScreenContentProps) => {
+export function ScreenContent({ title, path, children }: ScreenContentProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -17,7 +17,7 @@ export const ScreenContent = ({ title, path, children }: ScreenContentProps) => 
       {children}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
