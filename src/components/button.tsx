@@ -12,6 +12,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
+import { type ThemedStyle, useAppTheme } from "~/lib/theme";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
@@ -22,6 +23,7 @@ type ButtonProps = {
 } & PressableProps;
 
 export function Button({ ref, title, ...props }: ButtonProps) {
+  const { themed } = useAppTheme();
   const scale = useSharedValue(1);
 
   const animatedStyle = useAnimatedStyle(() => {
@@ -42,34 +44,33 @@ export function Button({ ref, title, ...props }: ButtonProps) {
         scale.value = 1;
         props.onPressOut?.(e);
       }}
-      style={[$styles.button, props.style, animatedStyle]}
+      style={[themed($button), props.style, animatedStyle]}
     >
-      <Text style={$styles.buttonText}>{title}</Text>
+      <Text style={$buttonText}>{title}</Text>
     </AnimatedPressable>
   );
 }
 
-const $styles = {
-  button: {
-    alignItems: "center",
-    backgroundColor: "#6366F1",
-    borderRadius: 24,
-    elevation: 5,
-    flexDirection: "row",
-    justifyContent: "center",
-    padding: 16,
-    shadowColor: "#000",
-    shadowOffset: {
-      height: 2,
-      width: 0,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  } satisfies ViewStyle,
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "600",
-    textAlign: "center",
-  } satisfies TextStyle,
+const $button: ThemedStyle<ViewStyle> = (theme) => ({
+  alignItems: "center",
+  backgroundColor: theme.colors.tint,
+  borderRadius: 24,
+  elevation: 5,
+  flexDirection: "row",
+  justifyContent: "center",
+  padding: 16,
+  shadowColor: "#000",
+  shadowOffset: {
+    height: 2,
+    width: 0,
+  },
+  shadowOpacity: 0.25,
+  shadowRadius: 3.84,
+});
+
+const $buttonText: TextStyle = {
+  color: "#FFFFFF",
+  fontSize: 16,
+  fontWeight: "600",
+  textAlign: "center",
 };

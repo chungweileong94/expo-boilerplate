@@ -2,6 +2,7 @@ import { Stack, useLocalSearchParams } from "expo-router";
 
 import { Container } from "~/components/container";
 import { ScreenContent } from "~/components/screen-content";
+import { t } from "~/lib/i18n";
 
 export default function Details() {
   const { name } = useLocalSearchParams();
@@ -12,7 +13,7 @@ export default function Details() {
       <Container>
         <ScreenContent
           path="screens/details.tsx"
-          title={`Showing details for user ${name}`}
+          title={t("details:header", { name })}
         />
       </Container>
     </>

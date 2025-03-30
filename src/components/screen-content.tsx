@@ -10,29 +10,29 @@ type ScreenContentProps = {
 
 export function ScreenContent({ title, path, children }: ScreenContentProps) {
   return (
-    <View style={$styles.container}>
-      <Text style={$styles.title}>{title}</Text>
-      <View style={$styles.separator} />
+    <View style={$container}>
+      <Text style={$title}>{title}</Text>
+      <View style={$separator} />
       <EditScreenInfo path={path} />
       {children}
     </View>
   );
 }
 
-const $styles = {
-  container: {
-    alignItems: "center",
-    flex: 1,
-    justifyContent: "center",
-  } satisfies ViewStyle,
-  separator: {
-    backgroundColor: "#d1d5db",
-    height: 1,
-    marginVertical: 30,
-    width: "80%",
-  } satisfies ViewStyle,
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  } satisfies TextStyle,
+const $container: ViewStyle = {
+  alignItems: "center",
+  flex: 1,
+  justifyContent: "center",
+};
+
+const $separator: ViewStyle = {
+  backgroundColor: "#d1d5db",
+  height: 1,
+  marginVertical: 30,
+  width: "80%",
+};
+
+const $title: TextStyle = {
+  fontSize: 20,
+  fontWeight: "bold",
 };

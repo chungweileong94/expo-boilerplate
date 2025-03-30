@@ -1,49 +1,37 @@
 import { Text, type TextStyle, View, type ViewStyle } from "react-native";
+import { t } from "~/lib/i18n";
 
 export default function EditScreenInfo({ path }: { path: string }) {
-  const title = "Open up the code for this screen:";
-  const description =
-    "Change any of the text, save the file, and your app will automatically update.";
+  const title = t("tutorial:title");
+  const description = t("tutorial:description");
 
   return (
-    <View style={$styles.getStartedContainer}>
-      <Text style={$styles.getStartedText}>{title}</Text>
-      <View
-        style={[$styles.codeHighlightContainer, $styles.homeScreenFilename]}
-      >
+    <View style={$getStartedContainer}>
+      <Text style={$getStartedText}>{title}</Text>
+      <View style={[$codeHighlightContainer, $homeScreenFilename]}>
         <Text>{path}</Text>
       </View>
-      <Text style={$styles.getStartedText}>{description}</Text>
+      <Text style={$getStartedText}>{description}</Text>
     </View>
   );
 }
 
-const $styles = {
-  codeHighlightContainer: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  } satisfies ViewStyle,
-  getStartedContainer: {
-    alignItems: "center",
-    marginHorizontal: 50,
-  } satisfies ViewStyle,
-  getStartedText: {
-    fontSize: 17,
-    lineHeight: 24,
-    textAlign: "center",
-  } satisfies TextStyle,
-  helpContainer: {
-    alignItems: "center",
-    marginHorizontal: 20,
-    marginTop: 15,
-  } satisfies ViewStyle,
-  helpLink: {
-    paddingVertical: 15,
-  } satisfies ViewStyle,
-  helpLinkText: {
-    textAlign: "center",
-  } satisfies TextStyle,
-  homeScreenFilename: {
-    marginVertical: 7,
-  } satisfies ViewStyle,
+const $codeHighlightContainer: ViewStyle = {
+  borderRadius: 3,
+  paddingHorizontal: 4,
+};
+
+const $getStartedContainer: ViewStyle = {
+  alignItems: "center",
+  marginHorizontal: 50,
+};
+
+const $getStartedText: TextStyle = {
+  fontSize: 17,
+  lineHeight: 24,
+  textAlign: "center",
+};
+
+const $homeScreenFilename: ViewStyle = {
+  marginVertical: 7,
 };
