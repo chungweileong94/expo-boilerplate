@@ -1,36 +1,36 @@
 {
-  "cesVersion": "2.14.3",
-  "projectName": "expo-playground",
-  "packages": [
-    {
-      "name": "expo-router",
-      "type": "navigation",
-      "options": {
-        "type": "stack"
-      }
-    },
-    {
-      "name": "stylesheet",
-      "type": "styling"
-    }
-  ],
-  "flags": {
-    "noGit": false,
-    "noInstall": false,
-    "overwrite": false,
-    "importAlias": true,
-    "packageManager": "pnpm",
-    "eas": false,
-    "publish": false
-  },
-  "packageManager": {
-    "type": "pnpm",
-    "version": "9.15.4"
-  },
-  "os": {
-    "type": "Darwin",
-    "platform": "darwin",
-    "arch": "arm64",
-    "kernelVersion": "24.4.0"
-  }
+	"cesVersion": "2.14.3",
+	"projectName": "expo-playground",
+	"packages": [
+		{
+			"name": "expo-router",
+			"type": "navigation",
+			"options": {
+				"type": "stack"
+			}
+		},
+		{
+			"name": "stylesheet",
+			"type": "styling"
+		}
+	],
+	"flags": {
+		"noGit": false,
+		"noInstall": false,
+		"overwrite": false,
+		"importAlias": true,
+		"packageManager": "pnpm",
+		"eas": false,
+		"publish": false
+	},
+	"packageManager": {
+		"type": "pnpm",
+		"version": "9.15.4"
+	},
+	"os": {
+		"type": "Darwin",
+		"platform": "darwin",
+		"arch": "arm64",
+		"kernelVersion": "24.4.0"
+	}
 }

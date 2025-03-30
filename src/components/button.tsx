@@ -1,13 +1,17 @@
 import {
   Pressable,
-  PressableProps,
-  StyleProp,
+  type PressableProps,
+  type StyleProp,
   StyleSheet,
   Text,
-  View,
-  ViewStyle,
-} from 'react-native';
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+  type View,
+  type ViewStyle,
+} from "react-native";
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
@@ -21,7 +25,9 @@ export function Button({ ref, title, ...props }: ButtonProps) {
   const scale = useSharedValue(1);
 
   const animatedStyle = useAnimatedStyle(() => {
-    return { transform: [{ scale: withTiming(scale.value, { duration: 100 }) }] };
+    return {
+      transform: [{ scale: withTiming(scale.value, { duration: 100 }) }],
+    };
   });
 
   return (
@@ -36,7 +42,8 @@ export function Button({ ref, title, ...props }: ButtonProps) {
         scale.value = 1;
         props.onPressOut?.(e);
       }}
-      style={[styles.button, props.style, animatedStyle]}>
+      style={[styles.button, props.style, animatedStyle]}
+    >
       <Text style={styles.buttonText}>{title}</Text>
     </AnimatedPressable>
   );
@@ -44,14 +51,14 @@ export function Button({ ref, title, ...props }: ButtonProps) {
 
 const styles = StyleSheet.create({
   button: {
-    alignItems: 'center',
-    backgroundColor: '#6366F1',
+    alignItems: "center",
+    backgroundColor: "#6366F1",
     borderRadius: 24,
     elevation: 5,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     padding: 16,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       height: 2,
       width: 0,
@@ -60,9 +67,9 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     fontSize: 16,
-    fontWeight: '600',
-    textAlign: 'center',
+    fontWeight: "600",
+    textAlign: "center",
   },
 });

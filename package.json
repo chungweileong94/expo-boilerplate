@@ -1,49 +1,41 @@
 {
-  "name": "expo-playground",
-  "version": "1.0.0",
-  "main": "expo-router/entry",
-  "scripts": {
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "start": "expo start",
-    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
-    "web": "expo start --web"
-  },
-  "dependencies": {
-    "@expo/vector-icons": "^14.0.0",
-    "@react-navigation/native": "^7.0.3",
-    "babel-plugin-react-compiler": "19.0.0-beta-aeaed83-20250323",
-    "expo": "53.0.0-canary-20250320-7a205d3",
-    "expo-constants": "18.0.0-canary-20250320-7a205d3",
-    "expo-linking": "7.1.0-canary-20250320-7a205d3",
-    "expo-router": "4.0.20-canary-20250320-7a205d3",
-    "expo-status-bar": "2.0.2-canary-20250320-7a205d3",
-    "expo-system-ui": "5.0.0-canary-20250320-7a205d3",
-    "expo-web-browser": "14.1.0-canary-20250320-7a205d3",
-    "react": "19.0.0",
-    "react-compiler-runtime": "19.0.0-beta-aeaed83-20250323",
-    "react-dom": "19.0.0",
-    "react-native": "0.79.0-rc.0",
-    "react-native-gesture-handler": "~2.24.0",
-    "react-native-reanimated": "3.17.1",
-    "react-native-safe-area-context": "5.2.0",
-    "react-native-screens": "~4.9.2",
-    "react-native-web": "~0.19.10"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@types/react": "~18.3.12",
-    "@typescript-eslint/eslint-plugin": "^7.7.0",
-    "@typescript-eslint/parser": "^7.7.0",
-    "eslint": "^8.57.0",
-    "eslint-config-universe": "^12.0.1",
-    "prettier": "^3.2.5",
-    "typescript": "~5.3.3"
-  },
-  "eslintConfig": {
-    "extends": "universe/native",
-    "root": true
-  },
-  "private": true
+	"name": "expo-playground",
+	"version": "1.0.0",
+	"main": "expo-router/entry",
+	"scripts": {
+		"android": "expo run:android",
+		"ios": "expo run:ios",
+		"start": "expo start",
+		"lint": "biome check",
+		"typecheck": "tsc --noEmit",
+		"web": "expo start --web"
+	},
+	"dependencies": {
+		"@expo/vector-icons": "^14.0.0",
+		"@react-navigation/native": "^7.0.3",
+		"babel-plugin-react-compiler": "19.0.0-beta-aeaed83-20250323",
+		"expo": "53.0.0-canary-20250320-7a205d3",
+		"expo-constants": "18.0.0-canary-20250320-7a205d3",
+		"expo-linking": "7.1.0-canary-20250320-7a205d3",
+		"expo-router": "4.0.20-canary-20250320-7a205d3",
+		"expo-status-bar": "2.0.2-canary-20250320-7a205d3",
+		"expo-system-ui": "5.0.0-canary-20250320-7a205d3",
+		"expo-web-browser": "14.1.0-canary-20250320-7a205d3",
+		"react": "19.0.0",
+		"react-compiler-runtime": "19.0.0-beta-aeaed83-20250323",
+		"react-dom": "19.0.0",
+		"react-native": "0.79.0-rc.0",
+		"react-native-gesture-handler": "~2.24.0",
+		"react-native-reanimated": "3.17.1",
+		"react-native-safe-area-context": "5.2.0",
+		"react-native-screens": "~4.9.2",
+		"react-native-web": "~0.19.10"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.20.0",
+		"@biomejs/biome": "1.9.4",
+		"@types/react": "~18.3.12",
+		"typescript": "~5.3.3"
+	},
+	"private": true
 }

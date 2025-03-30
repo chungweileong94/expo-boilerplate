@@ -1,0 +1,63 @@
+{
+	"languages": {
+		"JavaScript": {
+			"code_actions_on_format": {
+				"source.organizeImports.biome": true
+			},
+			"language_servers": [
+				"vtsls",
+				"!typescript-language-server",
+				"biome",
+				"!eslint",
+				"..."
+			],
+			"language_server": {
+				"name": "biome"
+			}
+		},
+		"TypeScript": {
+			"code_actions_on_format": {
+				"source.organizeImports.biome": true
+			},
+			"language_servers": [
+				"vtsls",
+				"!typescript-language-server",
+				"biome",
+				"!eslint",
+				"..."
+			],
+			"language_server": {
+				"name": "biome"
+			}
+		},
+		"TSX": {
+			"code_actions_on_format": {
+				"source.organizeImports.biome": true
+			},
+			"language_servers": [
+				"vtsls",
+				"!typescript-language-server",
+				"biome",
+				"!eslint",
+				"..."
+			],
+			"language_server": {
+				"name": "biome"
+			}
+		},
+		"JSON": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"JSONC": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		}
+	}
+}

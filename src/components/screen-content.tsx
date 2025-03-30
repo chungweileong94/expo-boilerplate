@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
 
-import EditScreenInfo from './edit-screen-info';
+import EditScreenInfo from "./edit-screen-info";
 
 type ScreenContentProps = {
   title: string;
@@ -21,18 +21,18 @@ export function ScreenContent({ title, path, children }: ScreenContentProps) {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   separator: {
-    backgroundColor: '#d1d5db',
+    backgroundColor: "#d1d5db",
     height: 1,
     marginVertical: 30,
-    width: '80%',
+    width: "80%",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
