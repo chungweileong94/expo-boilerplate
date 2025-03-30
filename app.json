@@ -3,7 +3,6 @@
     "name": "expo-playground",
     "slug": "expo-playground",
     "version": "1.0.0",
-
     "scheme": "expo-playground",
     "web": {
       "bundler": "metro",
@@ -17,27 +16,28 @@
         {
           "root": "./src/app"
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true,
       "reactCompiler": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.expo-playground"
     },
     "android": {
       "adaptiveIcon": {
