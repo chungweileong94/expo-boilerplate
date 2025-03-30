@@ -13,6 +13,7 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^7.0.3",
+    "babel-plugin-react-compiler": "19.0.0-beta-aeaed83-20250323",
     "expo": "^52.0.41",
     "expo-constants": "~17.0.8",
     "expo-linking": "~7.0.5",
@@ -21,6 +22,7 @@
     "expo-system-ui": "~4.0.8",
     "expo-web-browser": "~14.0.2",
     "react": "18.3.1",
+    "react-compiler-runtime": "19.0.0-beta-aeaed83-20250323",
     "react-dom": "18.3.1",
     "react-native": "0.76.7",
     "react-native-gesture-handler": "~2.20.2",

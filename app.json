@@ -10,6 +10,7 @@
       "output": "static",
       "favicon": "./assets/favicon.png"
     },
+    "newArchEnabled": true,
     "plugins": [
       [
         "expo-router",
@@ -20,8 +21,8 @@
     ],
     "experiments": {
       "typedRoutes": true,
-
-      "tsconfigPaths": true
+      "tsconfigPaths": true,
+      "reactCompiler": true
     },
 
     "orientation": "portrait",
