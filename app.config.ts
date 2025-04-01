@@ -20,6 +20,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     typedRoutes: true,
     tsconfigPaths: true,
     reactCompiler: true,
+
+    // TODO: Remove this after Expo 53 release
     reactCanary: true,
   },
   orientation: "portrait",
