@@ -1,4 +1,4 @@
-# Expo Example
+# Expo Boilerplate
 
 This project serves as a demonstration of how to set up and configure an Expo project.
 
