@@ -1,16 +1,11 @@
-import type { ExpoConfig, ConfigContext } from "expo/config";
+import type { ConfigContext, ExpoConfig } from "expo/config";
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: "expo-playground",
-  slug: "expo-playground",
+  name: "expo-boilerplate",
+  slug: "expo-boilerplate",
   version: "1.0.0",
-  scheme: "expo-playground",
-  web: {
-    bundler: "metro",
-    output: "static",
-    favicon: "./assets/favicon.png",
-  },
+  scheme: "expo-boilerplate",
   newArchEnabled: true,
   plugins: [
     [
