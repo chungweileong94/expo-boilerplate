@@ -13,7 +13,8 @@
 					"root": "./src/app"
 				}
 			],
-			"expo-localization"
+			"expo-localization",
+			"react-native-edge-to-edge"
 		],
 		"experiments": {
 			"typedRoutes": true,

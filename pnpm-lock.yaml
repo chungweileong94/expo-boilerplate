@@ -38,9 +38,6 @@ importers:
       expo-router:
         specifier: ~4.0.6
         version: 4.0.19(vegm645qloivh3vdrug7mcomca)
-      expo-status-bar:
-        specifier: ~2.0.1
-        version: 2.0.1(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))(react@19.0.0)
       expo-system-ui:
         specifier: 4.0.9
         version: 4.0.9(expo@52.0.42(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@expo/metro-runtime@4.0.1(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0)))(babel-plugin-react-compiler@19.0.0-beta-aeaed83-20250323)(react-compiler-runtime@19.0.0-beta-aeaed83-20250323(react@19.0.0))(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))(react@19.0.0))(react-native-web@0.19.13(react-dom@18.3.1(react@19.0.0))(react@19.0.0))(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))
@@ -62,6 +59,9 @@ importers:
       react-native:
         specifier: 0.77.2
         version: 0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0)
+      react-native-edge-to-edge:
+        specifier: ^1.5.0
+        version: 1.5.0(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))(react@19.0.0)
       react-native-gesture-handler:
         specifier: ~2.22.1
         version: 2.22.1(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))(react@19.0.0)
@@ -1977,12 +1977,6 @@ packages:
       react-native-reanimated:
         optional: true
 
-  expo-status-bar@2.0.1:
-    resolution: {integrity: sha512-AkIPX7jWHRPp83UBZ1iXtVvyr0g+DgBVvIXTtlmPtmUsm8Vq9Bb5IGj86PW8osuFlgoTVAg7HI/+Ok7yEYwiRg==}
-    peerDependencies:
-      react: '*'
-      react-native: '*'
-
   expo-system-ui@4.0.9:
     resolution: {integrity: sha512-hqBc0EWeK/BTB8i4H84vqNjje8GgxhapYrcWdg5qriaRA/u+bNNxhmpZXdAjFuhonOP4SmAbF+gjoJJWsTrhUg==}
     peerDependencies:
@@ -3112,6 +3106,12 @@ packages:
 
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
+  react-native-edge-to-edge@1.5.0:
+    resolution: {integrity: sha512-5DSya4pvH9zrqsSwd3vH5ZAS+8JntIXV+kfSe5soHr0lGW2/N4j5et8pkhiAbBDf2DEeAQXhQfHDoaiAWnUrYw==}
+    peerDependencies:
+      react: '>=18.2.0'
+      react-native: '>=0.74.0'
 
   react-native-gesture-handler@2.22.1:
     resolution: {integrity: sha512-E0C9D+Ia2UZYevoSV9rTKjhFWEVdR/3l4Z3TUoQrI/wewgzDlmJOrYvGW5aMlPUuQF2vHQOdFfAWhVEqFu4tWw==}
@@ -6371,11 +6371,6 @@ snapshots:
       - react-native
       - supports-color
 
-  expo-status-bar@2.0.1(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))(react@19.0.0):
-    dependencies:
-      react: 19.0.0
-      react-native: 0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0)
-
   expo-system-ui@4.0.9(expo@52.0.42(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@expo/metro-runtime@4.0.1(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0)))(babel-plugin-react-compiler@19.0.0-beta-aeaed83-20250323)(react-compiler-runtime@19.0.0-beta-aeaed83-20250323(react@19.0.0))(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))(react@19.0.0))(react-native-web@0.19.13(react-dom@18.3.1(react@19.0.0))(react@19.0.0))(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0)):
     dependencies:
       '@react-native/normalize-colors': 0.76.8
@@ -7623,6 +7618,11 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
+
+  react-native-edge-to-edge@1.5.0(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-native: 0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0)
 
   react-native-gesture-handler@2.22.1(react-native@0.77.2(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@19.0.12)(react@19.0.0))(react@19.0.0):
     dependencies:
