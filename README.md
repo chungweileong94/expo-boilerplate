@@ -9,6 +9,4 @@ This project was inspired by and borrows concepts from [Ignite](https://github.c
 ## TODOs
 
 - Update to Expo SDK 53
-  - Remove pnpm overrides
   - Remove expo install exclude
-  - Ref: https://github.com/expo/expo/issues/35807#issuecomment-2771307893
