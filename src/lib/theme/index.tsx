@@ -1,48 +1,40 @@
-import { createContext, use, useState } from "react";
-import type { StyleProp } from "react-native";
+import type { StyleSheet } from "react-native";
+import { create } from "zustand";
 import { colors } from "./colors";
+import { spacing } from "./spacing";
 
 interface Theme {
   colors: typeof colors;
+  spacing: typeof spacing;
 }
 
-interface ThemeContext {
+interface ThemeStore {
   theme: Theme;
 }
 
-const ThemeContext = createContext<ThemeContext | null>(null);
+const useThemeStore = create<ThemeStore>((_set) => ({
+  theme: { colors, spacing },
+}));
 
-export function AppThemeProvider({ children }: { children: React.ReactNode }) {
-  const [context] = useState<ThemeContext>({ theme: { colors } });
-  return <ThemeContext value={context}>{children}</ThemeContext>;
-}
+type NamedStyles<T> = StyleSheet.NamedStyles<T>;
 
-export type ThemedStyle<T> = (theme: Theme) => T;
-type ThemedStyleArray<T> = (
-  | ThemedStyle<T>
-  | StyleProp<T>
-  | (StyleProp<T> | ThemedStyle<T>)[]
-)[];
+export const ThemedStyleSheet = {
+  /**
+   * Just like `StyleSheet.create`, but with theme support.
+   */
+  // biome-ignore lint/suspicious/noExplicitAny: I know better
+  create: <T extends NamedStyles<T> | NamedStyles<any>>(
+    // biome-ignore lint/suspicious/noExplicitAny: I know better
+    createFunc: (theme: Theme) => T & NamedStyles<any>,
+  ): ((theme: Theme) => T) => {
+    return createFunc;
+  },
+};
 
-export function useAppTheme() {
-  const context = use(ThemeContext);
-  if (!context) {
-    throw new Error("`useTheme` must be used within a `ThemeProvider`");
-  }
-
-  const themed = <T,>(
-    styleOrStyleFn: ThemedStyle<T> | StyleProp<T> | ThemedStyleArray<T>,
-  ) => {
-    const flatStyles = [styleOrStyleFn].flat(3);
-    const stylesArray = flatStyles.map((f) => {
-      if (typeof f === "function") {
-        return (f as ThemedStyle<T>)(context.theme);
-      }
-      return f;
-    });
-    // Flatten the array of styles into a single object
-    return Object.assign({}, ...stylesArray) as T;
-  };
-
-  return { theme: context.theme, themed };
+// biome-ignore lint/suspicious/noExplicitAny: I know better
+export function useThemedStyles<T extends NamedStyles<T> | NamedStyles<any>>(
+  themedStyles: (theme: Theme) => T,
+) {
+  const theme = useThemeStore((state) => state.theme);
+  return themedStyles(theme);
 }

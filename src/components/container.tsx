@@ -1,10 +1,12 @@
-import { SafeAreaView, type ViewStyle } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 
 export function Container({ children }: { children: React.ReactNode }) {
-  return <SafeAreaView style={$container}>{children}</SafeAreaView>;
+  return <SafeAreaView style={styles.container}>{children}</SafeAreaView>;
 }
 
-const $container: ViewStyle = {
-  flex: 1,
-  margin: 24,
-};
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 24,
+  },
+});
