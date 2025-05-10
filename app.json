@@ -13,14 +13,12 @@
 					"root": "./src/app"
 				}
 			],
-			"expo-localization",
-			"react-native-edge-to-edge"
+			"expo-localization"
 		],
 		"experiments": {
 			"typedRoutes": true,
 			"tsconfigPaths": true,
-			"reactCompiler": true,
-			"reactCanary": true
+			"reactCompiler": true
 		},
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
@@ -38,7 +36,8 @@
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
 				"backgroundColor": "#ffffff"
-			}
+			},
+			"edgeToEdgeEnabled": true
 		}
 	}
 }

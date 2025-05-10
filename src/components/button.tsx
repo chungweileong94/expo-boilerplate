@@ -53,7 +53,7 @@ export function Button({ ref, title, ...props }: ButtonProps) {
 const themedStyles = ThemedStyleSheet.create((theme) => ({
   button: {
     alignItems: "center",
-    backgroundColor: theme.colors.tint,
+    backgroundColor: theme.colors.accent,
     borderRadius: 24,
     elevation: 5,
     flexDirection: "row",

@@ -40,7 +40,8 @@ export async function initI18n() {
   return i18n;
 }
 
-// via: https://stackoverflow.com/a/65333050
+// Grab from https://stackoverflow.com/a/65333050, with better type inference.
+// We will only infer key that its value is a string
 type RecursiveKeyOf<TObj extends object> = {
   [TKey in keyof TObj & (string | number)]: RecursiveKeyOfHandleValue<
     TObj[TKey],
@@ -63,11 +64,11 @@ type RecursiveKeyOfHandleValue<
   IsFirstLevel extends boolean,
   // biome-ignore lint/suspicious/noExplicitAny: We need it
 > = TValue extends any[]
-  ? Text
+  ? never
   : TValue extends object
     ? IsFirstLevel extends true
-      ? Text | `${Text}:${RecursiveKeyOfInner<TValue>}`
-      : Text | `${Text}.${RecursiveKeyOfInner<TValue>}`
+      ? `${Text}:${RecursiveKeyOfInner<TValue>}`
+      : `${Text}.${RecursiveKeyOfInner<TValue>}`
     : Text;
 
 type TransactionKeyPath = RecursiveKeyOf<Translations>;

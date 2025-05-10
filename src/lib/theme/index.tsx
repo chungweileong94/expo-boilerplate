@@ -1,40 +1,55 @@
-import type { StyleSheet } from "react-native";
+import type { ImageStyle, TextStyle, ViewStyle } from "react-native";
+import {
+  type EdgeInsets,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 import { create } from "zustand";
-import { colors } from "./colors";
-import { spacing } from "./spacing";
+import { appThemes } from "./config";
 
-interface Theme {
-  colors: typeof colors;
-  spacing: typeof spacing;
-}
+type AppTheme = typeof appThemes.default;
 
 interface ThemeStore {
-  theme: Theme;
+  theme: AppTheme;
 }
 
 const useThemeStore = create<ThemeStore>((_set) => ({
-  theme: { colors, spacing },
+  theme: appThemes.default,
 }));
 
-type NamedStyles<T> = StyleSheet.NamedStyles<T>;
+export function useAppTheme() {
+  const theme = useThemeStore((state) => state.theme);
+  return theme;
+}
+
+interface Runtime {
+  insets: EdgeInsets;
+}
+
+type Style = ViewStyle | TextStyle | ImageStyle;
+type NamedStyles<T> = {
+  // biome-ignore lint/suspicious/noExplicitAny: necessary
+  [P in keyof T]: Style | ((...args: any[]) => Style);
+};
+type ThemedStyleSheetCreateFunc<T> = (theme: AppTheme, rt: Runtime) => T;
 
 export const ThemedStyleSheet = {
   /**
    * Just like `StyleSheet.create`, but with theme support.
    */
-  // biome-ignore lint/suspicious/noExplicitAny: I know better
+  // biome-ignore lint/suspicious/noExplicitAny: necessary
   create: <T extends NamedStyles<T> | NamedStyles<any>>(
-    // biome-ignore lint/suspicious/noExplicitAny: I know better
-    createFunc: (theme: Theme) => T & NamedStyles<any>,
-  ): ((theme: Theme) => T) => {
+    // biome-ignore lint/suspicious/noExplicitAny: necessary
+    createFunc: ThemedStyleSheetCreateFunc<T & NamedStyles<any>>,
+  ): ThemedStyleSheetCreateFunc<T> => {
     return createFunc;
   },
 };
 
 // biome-ignore lint/suspicious/noExplicitAny: I know better
 export function useThemedStyles<T extends NamedStyles<T> | NamedStyles<any>>(
-  themedStyles: (theme: Theme) => T,
+  themedStyles: ThemedStyleSheetCreateFunc<T>,
 ) {
-  const theme = useThemeStore((state) => state.theme);
-  return themedStyles(theme);
+  const theme = useAppTheme();
+  const insets = useSafeAreaInsets();
+  return themedStyles(theme, { insets });
 }
